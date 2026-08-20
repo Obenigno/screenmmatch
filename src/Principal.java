@@ -1,4 +1,5 @@
 import br.com.alura.screenmatach.modelos.Filme;
+import br.com.alura.screenmatach.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
@@ -15,5 +16,13 @@ public class Principal {
         meuFilme.avalia(7);
         System.out.println("O numero total de avaliações é: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
+
+
+        Serie dexter = new Serie();
+        dexter.setNome("Dexter");
+        dexter.setAnoDeLancamento(2006);
+        dexter.setDuracaoEmMinutos(5280);
+        dexter.exibeFichaTecnica();
+
     }
 }
