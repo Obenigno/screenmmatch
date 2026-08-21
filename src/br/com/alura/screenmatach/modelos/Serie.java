@@ -1,13 +1,13 @@
 package br.com.alura.screenmatach.modelos;
 
 public class Serie extends Titulo{
-    private int temporada;
+    private int temporadas;
     private int episodiosPorTemporadas;
     private boolean ativa;
     private int minutoPorEpisodio;
 
-    public void setTemporada(int temporada) {
-        this.temporada = temporada;
+    public void setTemporadas(int temporada) {
+        this.temporadas = temporada;
     }
 
     public void setEpisodiosPorTemporadas(int episodiosPorTemporadas) {
@@ -20,5 +20,10 @@ public class Serie extends Titulo{
 
     public void setMinutoPorEpisodio(int minutoPorEpisodio) {
         this.minutoPorEpisodio = minutoPorEpisodio;
+    }
+
+    @Override
+    public int getDuracaoEmMinutos() {
+        return temporadas * minutoPorEpisodio * episodiosPorTemporadas;
     }
 }

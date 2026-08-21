@@ -20,9 +20,11 @@ public class Principal {
 
         Serie dexter = new Serie();
         dexter.setNome("Dexter");
-        dexter.setAnoDeLancamento(2006);
-        dexter.setDuracaoEmMinutos(5280);
-        dexter.exibeFichaTecnica();
+        dexter.setTemporadas(8);
+        dexter.setEpisodiosPorTemporadas(12);
+        dexter.setMinutoPorEpisodio(50);
+        System.out.println("Essa serie tem " +  dexter.getDuracaoEmMinutos() + " minutos.");
+
 
     }
 }
