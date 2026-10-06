@@ -1,5 +1,8 @@
-import br.com.alura.screenmatach.modelos.Filme;
-import br.com.alura.screenmatach.modelos.Serie;
+import br.com.alura.screenmatch.screenmatach.modelos.Episodio;
+import br.com.alura.screenmatch.screenmatach.modelos.Filme;
+import br.com.alura.screenmatch.screenmatach.modelos.Serie;
+import br.com.alura.screenmatch.screenmatch.calculadora.CalculadoraDeTempo;
+import br.com.alura.screenmatch.screenmatch.calculadora.FiltraRecomendacao;
 
 public class Principal {
     public static void main(String[] args) {
@@ -25,6 +28,24 @@ public class Principal {
         dexter.setMinutoPorEpisodio(50);
         System.out.println("Essa serie tem " +  dexter.getDuracaoEmMinutos() + " minutos.");
 
+        Filme outroFilme = new Filme();
+        outroFilme.setNome("Avatar");
+        outroFilme.setAnoDeLancamento(2023);
+        outroFilme.setDuracaoEmMinutos(210);
 
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(meuFilme);
+        calculadora.inclui(outroFilme);
+        calculadora.inclui(dexter);
+        System.out.println(calculadora.getTempoTotal());
+
+        FiltraRecomendacao filtro = new FiltraRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(dexter);
+        episodio.setTotalvisualizacoes(300);
+        filtro.filtra(episodio);
     }
 }
