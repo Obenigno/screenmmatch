@@ -4,11 +4,13 @@ import br.com.alura.screenmatch.screenmatach.modelos.Serie;
 import br.com.alura.screenmatch.screenmatch.calculadora.CalculadoraDeTempo;
 import br.com.alura.screenmatch.screenmatch.calculadora.FiltraRecomendacao;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
 
         Filme meuFilme = new Filme();
-        double media = meuFilme.pegaMedia();
+
         meuFilme.setNome("Como treinar seu Dragao");
         meuFilme.setAnoDeLancamento(2015);
         meuFilme.setDuracaoEmMinutos(110);
@@ -47,5 +49,19 @@ public class Principal {
         episodio.setSerie(dexter);
         episodio.setTotalvisualizacoes(300);
         filtro.filtra(episodio);
+
+        var filmeDoSamuel = new Filme();
+        filmeDoSamuel.setNome("Napoleão");
+        filmeDoSamuel.setDuracaoEmMinutos(158);
+        filmeDoSamuel.setAnoDeLancamento(2023);
+        filmeDoSamuel.avalia(8);
+        ArrayList <Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filmeDoSamuel);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        System.out.println("Tamanho da lista " + listaDeFilmes.size());
+        System.out.println("Primeiro filme " + listaDeFilmes.get(0).getNome());
+
+
     }
 }
